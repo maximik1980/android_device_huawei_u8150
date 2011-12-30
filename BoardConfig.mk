@@ -87,7 +87,7 @@ TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/fw_bcm4319.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/fw_bcm4319_apsta.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/fw_bcm4319.bin nvram_path=/system/etc/firmware/nvram.txt"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/fw_bcm4319.bin nvram_path=/system/etc/firmware/nvram.txt iface_name=wlan"
 WIFI_DRIVER_MODULE_NAME := "dhd"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4319.ko"
 WPA_SUPPLICANT_VERSION := VER_0_5_X
