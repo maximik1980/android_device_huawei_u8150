@@ -59,9 +59,6 @@ BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 TARGET_USES_OLD_LIBSENSORS_HAL := true
 BOARD_VENDOR_USE_AKMD := akm8973
 
-# Lights
-TARGET_PROVIDES_LIBLIGHTS := true
-
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/u8150/recovery/recovery_ui.c
 BOARD_LDPI_RECOVERY := true

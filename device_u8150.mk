@@ -20,7 +20,7 @@ PRODUCT_PACKAGES += \
     hwprops \
     rzscontrol \
     Gallery \
-    lights.u8150 \
+    lights.msm7k \
     copybit.u8150 \
     gps.u8150
 
