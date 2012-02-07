@@ -16,6 +16,9 @@
 # inherit from the proprietary version
 -include vendor/huawei/u8150/BoardConfigVendor.mk
 
+# use a local header path
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/u8150/include
+
 # ARMv6-compatible processor rev 2 (v6l)
 # CPU
 TARGET_BOARD_PLATFORM := msm7k
