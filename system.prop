@@ -13,6 +13,7 @@ ro.sf.lcd_density=120
 persist.sys.use_dithering=1
 persist.sys.purgeable_assets=1
 persist.sys.use_16bpp_alpha=1
+persist.sys.scrollingcache=3
 # Disable ICS rotation animation, it's too slow
 persist.sys.rotationanimation=false
 
