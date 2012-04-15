@@ -42,6 +42,10 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
+# Keys
+PRODUCT_COPY_FILES += \
+    device/huawei/u8150/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl
+
 # Init files
 PRODUCT_COPY_FILES += \
     device/huawei/u8150/prebuilt/init.u8150.rc:root/init.u8150.rc \
