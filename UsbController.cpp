@@ -55,7 +55,7 @@ int UsbController::enableRNDIS(bool enable) {
 
 	char value[20];
 	int fd = open("/sys/module/g_android/parameters/product_id", O_RDWR);
-	int count = snprintf(value, sizeof(value), "%s\n", (enable ? "1039" : "1038"));
+	int count = snprintf(value, sizeof(value), "%d\n", (enable ? 1039 : 1038));
 	write(fd, value, count);
 	close(fd);
 	return 0;
