@@ -1,5 +1,3 @@
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),u8150)
-
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -16,5 +14,3 @@ LOCAL_C_INCLUDES += hardware/msm7k/libgralloc
 LOCAL_CFLAGS += -DCOPYBIT_MSM7K=1
 
 include $(BUILD_SHARED_LIBRARY)
-
-endif
