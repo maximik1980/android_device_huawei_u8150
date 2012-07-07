@@ -2,6 +2,9 @@
 # system.prop for U8150
 #
 
+# Audio
+persist.sys.speaker-attn=6
+
 # Graphics
 view.fading_edge_length=8
 view.minimum_fling_velocity=25
