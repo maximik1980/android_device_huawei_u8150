@@ -79,6 +79,9 @@ BOARD_EGL_CFG := device/huawei/u8150/prebuilt/lib/egl/egl.cfg
 BOARD_HAS_LIMITED_EGL := true
 TARGET_ELECTRONBEAM_FRAMES := 8
 
+# Camera
+BOARD_LIBCAMERA_MISSING_AUTOFOCUS := true
+
 # WiFI
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/fw_bcm4319.bin"
