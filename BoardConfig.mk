@@ -14,21 +14,27 @@
 #
 
 # inherit from the proprietary version
--include vendor/huawei/u8150/BoardConfigVendor.mk
+-include vendor/huawei/u8185/BoardConfigVendor.mk
 
 # use a local header path
-TARGET_SPECIFIC_HEADER_PATH := device/huawei/u8150/include
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/u8185/include
 
-# ARMv6-compatible processor rev 2 (v6l)
+# ARMv7-compatible processor
 # CPU
-TARGET_BOARD_PLATFORM := msm7k
-TARGET_ARCH_VARIANT := armv6j
+TARGET_ARCH := arm
+TARGET_BOARD_PLATFORM := msm7x27a
+TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_ABI := armeabi-v6j
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT_FPU := neon
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+ARCH_ARM_HAVE_TLS_REGISTER := true
+TARGET_CORTEX_CACHE_LINE_32 := true
+TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
 
 # Target properties
-TARGET_BOOTLOADER_BOARD_NAME := u8150
-TARGET_OTA_ASSERT_DEVICE := u8150,ideos,U8150
+TARGET_BOOTLOADER_BOARD_NAME := u8185
+TARGET_OTA_ASSERT_DEVICE := u8185
 
 # Target information
 TARGET_NO_BOOTLOADER := true
@@ -63,8 +69,9 @@ TARGET_USES_OLD_LIBSENSORS_HAL := true
 BOARD_VENDOR_USE_AKMD := akm8973
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/u8150/recovery/recovery_ui.c
 BOARD_LDPI_RECOVERY := true
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/u8185/recovery/recovery_keys.c
+BOARD_USE_CUSTOM_RECOVERY_FONT := '"font_7x16.h"' 
 
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
@@ -76,25 +83,25 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
 TARGET_SF_NEEDS_REAL_DIMENSIONS := true
 BOARD_NO_RGBX_8888 := true
-BOARD_EGL_CFG := device/huawei/u8150/prebuilt/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/huawei/u8185/prebuilt/lib/egl/egl.cfg
 BOARD_HAS_LIMITED_EGL := true
 TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 TARGET_ELECTRONBEAM_FRAMES := 8
 
 # WiFI
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WIFI_DRIVER_FW_STA_PATH := "/system/etc/firmware/fw_bcm4319.bin"
-WIFI_DRIVER_FW_AP_PATH := "/system/etc/firmware/fw_bcm4319_apsta.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/fw_bcm4319.bin nvram_path=/system/etc/firmware/nvram.txt iface_name=wlan"
-WIFI_DRIVER_MODULE_NAME := "dhd"
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4319.ko"
-WPA_SUPPLICANT_VERSION := VER_0_5_X
+BOARD_WLAN_CHIP_AR6003 := true
+BOARD_WLAN_ATHEROS_SDK := hardware/atheros/AR6kSDK.3.1/AR6kSDK.build_3.1_RC.734
+WPA_SUPPLICANT_VERSION := VER_0_6_X
+BOARD_WPA_SUPPLICANT_DRIVER := AR6000
+WIFI_DRIVER_MODULE_PATH := /system/wifi/ar6000.ko
+WIFI_DRIVER_MODULE_NAME := ar6000
 
 # Kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8150/prebuilt/recovery_kernel
+TARGET_KERNEL_SOURCE := kernel/huawei/u8815
+TARGET_KERNEL_CONFIG := cm_u8185_defconfig
+BOARD_KERNEL_CMDLINE := androidboot.hardware=u8185
 BOARD_KERNEL_BASE := 0x00200000
-BOARD_KERNEL_CMDLINE := mem=211M console=ttyMSM2,115200n8 androidboot.hardware=u8150
-BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_PAGESIZE := 2048
 
 # # cat /proc/mtd
 # dev:    size   erasesize  name
@@ -109,8 +116,8 @@ BOARD_KERNEL_PAGESIZE := 4096
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00500000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00500000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0aa00000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0a6a0000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0ba00000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0a500000
 
 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_FLASH_BLOCK_SIZE := 262144 
